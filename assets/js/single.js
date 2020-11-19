@@ -33,13 +33,13 @@ var getRepoIssues = function(repo) {
         issueEl.setAttribute("href", issues[i].html_url);
         issueEl.setAttribute("target", "_blank");
         issueContainerEl.appendChild(issueEl);
-    }
+    
     // create span to hold issue title
     var titleEl = document.createElement("span");
         titleEl.textContent = issues[i].title;
 
     // append to container
-        issueEl.appendChild(titleEl);
+    issueEl.appendChild(titleEl);
 
     // create a type element
     var typeEl = document.createElement("span");
@@ -50,9 +50,11 @@ var getRepoIssues = function(repo) {
     } else {
         typeEl.textContent = "(Issue)";
     }
+     // append to container
+     issueEl.appendChild(typeEl);
+}
 
-    // append to container
-    issueEl.appendChild(typeEl);
+   
 };
 
 var displayWarning = function(repo) {
